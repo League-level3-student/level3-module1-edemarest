@@ -13,9 +13,16 @@ public class _05_LongChipCompetition {
 	 * initialize The Beatles before you start your search. *
 	 **/
 	private ArrayList<Beatle> theBeatles = new ArrayList<Beatle>();
-
+	
 	public static void main(String[] args) {
+		
 		_05_LongChipCompetition lcc = new _05_LongChipCompetition();
+		int chip = 0;
+		
+		for(int i = 0; i < george.chips.size(); i++) {
+			
+		}
+		
 		
 	}
 	
