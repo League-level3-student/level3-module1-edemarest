@@ -13,16 +13,33 @@ public class _05_LongChipCompetition {
 	 * initialize The Beatles before you start your search. *
 	 **/
 	private ArrayList<Beatle> theBeatles = new ArrayList<Beatle>();
+	double chip = 0;
+	String winner = "";
 	
 	public static void main(String[] args) {
 		
 		_05_LongChipCompetition lcc = new _05_LongChipCompetition();
-		int chip = 0;
+		lcc.run();
 		
-		for(int i = 0; i < george.chips.size(); i++) {
+		
 			
 		}
 		
+		
+	
+	
+	void run() {
+		initializeBeatles();
+		for(int i = 0; i < theBeatles.size(); i++) {
+			for(Chip fry: theBeatles.get(i).getChips()) {
+				if(fry.getLength() >= chip) {
+					chip = fry.getLength();
+					winner = theBeatles.get(i).getName();
+				}
+			}	
+		}
+		
+		System.out.println(winner+" has the longest chip, it is "+chip+" inches long!");
 		
 	}
 	

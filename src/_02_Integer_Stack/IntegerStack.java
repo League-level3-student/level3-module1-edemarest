@@ -32,7 +32,7 @@ public class IntegerStack {
 		int[] i3 = new int[ints.length-1];
 		//C. iterate through the new array and copy every element from the
 		//   member array to the new array
-		for(int i = 0; i < ints.length;i++) {
+		for(int i = 0; i < i3.length;i++) {
 			i3[i] = ints[i];
 		}
 		//D. set the member array equal to the new array
