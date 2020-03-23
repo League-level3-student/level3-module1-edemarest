@@ -15,10 +15,10 @@ public class _02_LogSearch implements ActionListener {
 	
 	JFrame frame = new JFrame();
 	JPanel panel = new JPanel();
-	JButton b1 = new JButton();
-	JButton b2 = new JButton();
-	JButton b3 = new JButton();
-	JButton b4 = new JButton();
+	JButton b1 = new JButton("Add");
+	JButton b2 = new JButton("Search");
+	JButton b3 = new JButton("Print All");
+	JButton b4 = new JButton("Remove");
 	public static void main(String[] args) {
 		new _02_LogSearch().run();
 		
@@ -59,7 +59,13 @@ public class _02_LogSearch implements ActionListener {
 			}
 		}
 		if(e.getSource()==b4) {
-			
+			int delete = Integer.parseInt(JOptionPane.showInputDialog("Enter an ID number:" ));
+			if(map.containsKey(delete)) {
+				map.remove(delete);
+			}
+			else {
+				System.out.println("This ID does not exist.");
+			}
 		}
 		
 		
