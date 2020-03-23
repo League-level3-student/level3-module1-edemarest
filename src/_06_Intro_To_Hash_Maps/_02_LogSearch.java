@@ -1,9 +1,74 @@
 package _06_Intro_To_Hash_Maps;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.HashMap;
+import java.util.Set;
 
-public class _02_LogSearch {
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
+public class _02_LogSearch implements ActionListener {
+	HashMap<Integer, String> map = new HashMap<Integer, String>();
+	
+	JFrame frame = new JFrame();
+	JPanel panel = new JPanel();
+	JButton b1 = new JButton();
+	JButton b2 = new JButton();
+	JButton b3 = new JButton();
+	JButton b4 = new JButton();
+	public static void main(String[] args) {
+		new _02_LogSearch().run();
+		
+	}
+	void run(){
+		frame.add(panel);
+		panel.add(b1);
+		panel.add(b2);
+		panel.add(b3);
+		panel.add(b4);
+		b1.addActionListener(this);
+		b2.addActionListener(this);
+		b3.addActionListener(this);
+		frame.setVisible(true);
+		frame.pack();
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		if(e.getSource() == b1) {
+			int ID = Integer.parseInt(JOptionPane.showInputDialog("Enter an ID number:" ));
+			String name = JOptionPane.showInputDialog("Enter a name:" );
+			map.put(ID,  name);
+		}
+		if(e.getSource()==b2) {
+			int search = Integer.parseInt(JOptionPane.showInputDialog("Search for an ID number: "));
+			if(map.containsKey(search)) {
+				System.out.println("The user with this ID is:  "+map.get(search));
+			}
+			else {
+				System.out.println("A user with that ID does not exist.");
+			}	
+		} 
+		if(e.getSource()==b3) {
+			for(int key: map.keySet()) {
+				
+				System.out.println("ID: "+key+"  Name: "+map.get(key));
+			}
+		}
+		if(e.getSource()==b4) {
+			
+		}
+		
+		
+		
+	}
+	
   /* 
-	 * Crate a HashMap of Integers for the keys and Strings for the values.
+	 * Create a HashMap of Integers for the keys and Strings for the values.
+	  
 	 * Create a GUI with three buttons. 
 	 * Button 1: Add Entry
 	 * 				When this button is clicked, use an input dialog to ask the user to enter an ID number.

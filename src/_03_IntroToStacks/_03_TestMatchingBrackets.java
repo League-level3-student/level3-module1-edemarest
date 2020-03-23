@@ -22,9 +22,23 @@ public class _03_TestMatchingBrackets {
 	private boolean doBracketsMatch(String b) {
 		Stack<Boolean> brackets = new Stack<Boolean>();
 		for(int i = 0; i < b.length(); i++) {
-			if(b.charAt)
+			if(b.charAt(i)=='{') {
+				brackets.push(false);
+			}
 		}
-		return false;
+		for(int i = 0; i < b.length(); i++) {
+			if(b.charAt(i)=='}') {
+				brackets.pop();
+			}
+		}
+		if(brackets.size()==0&&b.charAt(0)!='}') {
+			System.out.println("true");
+		return true;
+		}
+		else {
+			System.out.println("false");
+			return false;
+		}
 	}
 
 }
